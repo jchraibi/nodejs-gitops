@@ -30,7 +30,7 @@ spec:
         deploymentconfig: nodejs-ex-git
     spec:
       containers:
-      - image: image-registry.openshift-image-registry.svc:5000/db/nodejs-ex-git@sha256:0b2edc00d70c00a6dedde910272704e534f29d5a153606ca1ddf24d05ca87d20
+      - image: image-registry.openshift-image-registry.svc:5000/db/nodejs-ex-git@sha256:aba56e9d24aad2923c73bbc4b19291592462435491ccc830b9b65842a13db2da
         imagePullPolicy: Always
         name: nodejs-ex-git
         ports:
