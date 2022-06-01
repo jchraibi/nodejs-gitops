@@ -1,0 +1,25 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: nodejs-ex-git
+    app.kubernetes.io/component: nodejs-ex-git
+    app.kubernetes.io/instance: nodejs-ex-git
+    app.kubernetes.io/name: nodejs-ex-git
+    app.kubernetes.io/part-of: nodejs-ex-git-app
+    app.openshift.io/runtime: nodejs
+    app.openshift.io/runtime-version: 16-ubi8
+  name: nodejs-ex-git
+  namespace: db-gitops
+spec:
+  host: nodejs-ex-git-db-gitops.apps.cluster-zmfcv.zmfcv.sandbox531.opentlc.com
+  port:
+    targetPort: 8080-tcp
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: nodejs-ex-git
+    weight: 100
+  wildcardPolicy: None
